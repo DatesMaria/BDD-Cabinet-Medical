@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AsistentController">
+   <children>
+      <TabPane fx:id="tabPaneAsistent" layoutX="222.0" layoutY="160.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <tabs>
+            <Tab fx:id="tabGestiunePacienti" text="Gestiune Pacineti">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnListaConsultatii" layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnListaConsultatiiAction" text="Lista consultatii">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="tableView" layoutX="3.0" layoutY="388.0" prefHeight="226.0" prefWidth="790.0" visible="false" />
+                        <Label layoutX="18.0" layoutY="93.0" text="Cautare pacient dupa CNP: ">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="cnpPacientCautatLabel" layoutX="211.0" layoutY="89.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font></TextField>
+                        <Button fx:id="btnCautarePacient" layoutX="412.0" layoutY="89.0" mnemonicParsing="false" onAction="#btnCautarePacientAction" text="Cautare">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="btnAnulareConsult" layoutX="360.0" layoutY="17.0" mnemonicParsing="false" onAction="#btnAnulareConsultAction" prefHeight="4.0" prefWidth="148.0" text="Sterge consultatie">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="messageLbl" layoutX="14.0" layoutY="311.0" prefHeight="26.0" prefWidth="190.0">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                        <VBox fx:id="tableHolder" layoutX="10.0" layoutY="369.0" prefHeight="243.0" prefWidth="771.0" />
+                        <Button layoutX="155.0" layoutY="17.0" mnemonicParsing="false" onAction="#programareConsultatieShow" prefHeight="31.0" prefWidth="182.0" text="Programare consultatie">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Label fx:id="messageLabel" layoutX="211.0" layoutY="63.0" prefHeight="20.0" prefWidth="201.0" textFill="#d71212">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Pane fx:id="creareConsultatiePane" layoutX="18.0" layoutY="126.0" prefHeight="265.0" prefWidth="691.0" visible="false">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Programare Consultatie">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="62.0" text=" Medic">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="100.0" text="Data consultatie">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="14.0" layoutY="136.0" prefHeight="23.0" prefWidth="52.0" text="Detalii ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <ComboBox fx:id="comboBoxMedic" layoutX="85.0" layoutY="60.0" prefWidth="150.0" />
+                              <DatePicker fx:id="dataConsultatie" layoutX="126.0" layoutY="98.0" prefHeight="25.0" prefWidth="168.0" />
+                              <Label fx:id="progLblNotification" layoutX="182.0" layoutY="24.0" prefHeight="20.0" prefWidth="211.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="btnCreareConsultatie" layoutX="585.0" layoutY="223.0" mnemonicParsing="false" onAction="#btnCreareConsultatieAction" prefHeight="25.0" prefWidth="92.0" text="Programeaza" />
+                              <TextArea fx:id="detaliiTextArea" layoutX="72.0" layoutY="136.0" prefHeight="99.0" prefWidth="277.0" />
+                              <ComboBox fx:id="comboBoxPacient" layoutX="420.0" layoutY="60.0" prefWidth="150.0" />
+                              <Label layoutX="351.0" layoutY="64.0" text="Pacient" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="btnCautareConsultatii" layoutX="412.0" layoutY="152.0" mnemonicParsing="false" onAction="#btnCautareConsultatiiAction" text="Cautare">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <DatePicker fx:id="dataConsultatieCautata" layoutX="212.0" layoutY="155.0" />
+                        <Label layoutX="18.0" layoutY="159.0" prefHeight="21.0" prefWidth="192.0" text="Cautatre consultatii din data:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabGestiuneReteta" text="Gestiune Retete">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnCreareReteta" layoutX="21.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnCreareRetetaAction" text="Creare Reteta">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnListaRetete" layoutX="164.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnListaReteteAction" text="Lista Retete">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnStergeReteta" layoutX="302.0" layoutY="44.0" mnemonicParsing="false" onAction="#btnStergeRetetaAction" text="Sterge Reteta">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Pane fx:id="creareRetetaPane" layoutX="21.0" layoutY="88.0" prefHeight="281.0" prefWidth="301.0" visible="false">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" text="Reteta">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Label>
+                              <Label layoutX="13.0" layoutY="81.0" text="Consultatie">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="122.0" text="Medicamente">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="9.0" layoutY="204.0" text="Compensata">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="11.0" layoutY="164.0" text="Data">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="medicamente" layoutX="117.0" layoutY="120.0" />
+                              <ComboBox fx:id="cmbBoxConsultatieReteta" layoutX="116.0" layoutY="79.0" prefWidth="150.0" />
+                              <CheckBox fx:id="compensat" layoutX="117.0" layoutY="206.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="8.0" />
+                              <DatePicker fx:id="dataReteta" layoutX="116.0" layoutY="161.0" />
+                              <Button fx:id="btnCreazaReteta" layoutX="228.0" layoutY="237.0" mnemonicParsing="false" onAction="#btnInsertRetetaAction" text="Creaza">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Label fx:id="mesajLblReteta" layoutX="95.0" layoutY="43.0" prefHeight="17.0" prefWidth="165.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children></Pane>
+                        <TableView fx:id="tableViewRetete" layoutX="55.0" layoutY="399.0" prefHeight="185.0" prefWidth="696.0" visible="false" />
+                        <VBox fx:id="tableHolderRetete" layoutX="21.0" layoutY="375.0" prefHeight="239.0" prefWidth="748.0" AnchorPane.topAnchor="375.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tabGestiuneFacturi" text="Gestiune Facturi">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnCreareFactura" layoutX="20.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnCreareFacturaAction" text="Creare factura">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnListaFacturi" layoutX="170.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnListaFacturiAction" text="Lista facturilor">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <TableView fx:id="tableViewFacturi" layoutX="24.0" layoutY="289.0" prefHeight="299.0" prefWidth="756.0" visible="false" />
+                        <VBox fx:id="tableHolderFacturi" layoutX="7.0" layoutY="277.0" prefHeight="319.0" prefWidth="760.0" />
+                        <Button layoutX="308.0" layoutY="25.0" mnemonicParsing="false" onAction="#btnStergeFacturaAction" prefHeight="22.0" prefWidth="113.0" text="Sterge factura">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Pane fx:id="creazaFacturaPane" layoutX="20.0" layoutY="69.0" prefHeight="209.0" prefWidth="401.0">
+                           <children>
+                              <Label layoutX="9.0" layoutY="4.0" prefHeight="17.0" prefWidth="60.0" text="Factura">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Label>
+                              <ComboBox fx:id="comboBoxConsultatie" layoutX="143.0" layoutY="36.0" prefHeight="23.0" prefWidth="150.0" />
+                              <Label layoutX="16.0" layoutY="37.0" prefHeight="20.0" prefWidth="127.0" text="Consultatie">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="16.0" layoutY="70.0" text="Data">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="16.0" layoutY="101.0" text="Valoare">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <DatePicker fx:id="dataFactura" layoutX="143.0" layoutY="68.0" />
+                              <TextField fx:id="valoareFactura" layoutX="144.0" layoutY="99.0" />
+                              <Button fx:id="btnInsertFactura" layoutX="301.0" layoutY="158.0" mnemonicParsing="false" onAction="#btnInsertFacturaAction" prefHeight="30.0" prefWidth="100.0" text="Creaza factura">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Button>
+                              <Label fx:id="msgLbl" layoutX="111.0" layoutY="6.0" prefHeight="17.0" prefWidth="179.0">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </Pane>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Label layoutX="14.0" layoutY="14.0" text="Asistent">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Hyperlink fx:id="logout" layoutX="722.0" layoutY="17.0" onAction="#actionLogout" prefHeight="16.0" prefWidth="59.0" text="Logout" />
+   </children>
+</AnchorPane>

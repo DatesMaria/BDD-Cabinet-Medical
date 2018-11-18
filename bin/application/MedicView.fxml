@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MedicController">
+   <children>
+      <Label layoutX="26.0" layoutY="14.0" text="Medic">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Pane fx:id="medicPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="btnPacientiLista" layoutX="31.0" layoutY="76.0" mnemonicParsing="false" onAction="#btnPacientiListaAction" text="Lista Pacienti">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnConsultatiiLista" layoutX="147.0" layoutY="76.0" mnemonicParsing="false" onAction="#btnConsultatiiListaAction" text="Lista Consultatii">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label layoutX="19.0" layoutY="202.0" text="Cautare consultatii din data: ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="400.0" layoutY="197.0" mnemonicParsing="false" onAction="#btnCautareConsultatiiAction" text="Cautare">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="31.0" layoutY="250.0" text="Cauta pacient dupa CNP:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="cnpPacientCautat" layoutX="209.0" layoutY="245.0" prefHeight="30.0" prefWidth="174.0" promptText="cnp ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btncautareCnp" layoutX="400.0" layoutY="245.0" mnemonicParsing="false" onAction="#btncautareCnpAction" text="Cautare">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tableView" layoutX="10.0" layoutY="397.0" prefHeight="293.0" prefWidth="774.0" visible="false" />
+            <VBox fx:id="tableHolder" layoutX="17.0" layoutY="436.0" prefHeight="252.0" prefWidth="761.0" />
+            <Label fx:id="messageLabel" layoutX="31.0" layoutY="397.0" prefHeight="20.0" prefWidth="236.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Hyperlink fx:id="logout" layoutX="725.0" layoutY="14.0" onAction="#actionLogout" text="Logout" />
+            <DatePicker fx:id="dataConsultatieCautata" layoutX="209.0" layoutY="200.0" />
+            <Label fx:id="messageLbl" layoutX="221.0" layoutY="153.0" prefHeight="17.0" prefWidth="215.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="633.0" layoutY="255.0" mnemonicParsing="false" onAction="#finalizareConsultatieAction" text="Finalizare Consultatie">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

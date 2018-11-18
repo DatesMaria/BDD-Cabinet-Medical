@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="431.0" prefWidth="521.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PacientController">
+   <children>
+      <Pane fx:id="pacientPane" layoutX="-2.0" prefHeight="431.0" prefWidth="627.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Pacient">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Label>
+            <Button fx:id="btnListaFacturi" layoutX="341.0" layoutY="81.0" mnemonicParsing="false" onAction="#btnListaFacturiShow" prefHeight="30.0" prefWidth="168.0" text="Lista Facturi">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnConsultatiiLista" layoutX="20.0" layoutY="78.0" mnemonicParsing="false" onAction="#btnConsultatiiListaAction" prefHeight="30.0" prefWidth="141.0" text="Lista Consultatii">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAnulareConsultatie" layoutX="20.0" layoutY="142.0" mnemonicParsing="false" onAction="#btnAnulareConsultatieAction" text="Anulare Consultatie" visible="false">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <TableView fx:id="tableView" layoutX="2.0" layoutY="253.0" prefHeight="175.0" prefWidth="521.0" visible="false" />
+            <Hyperlink fx:id="logout" layoutX="450.0" layoutY="18.0" onAction="#actionLogout" text="Logout" />
+            <Button fx:id="btnListaRetete" layoutX="188.0" layoutY="81.0" mnemonicParsing="false" onAction="#btnListaReteteShow" text="Vizualizare Retete">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <VBox fx:id="tableHolder" layoutX="8.0" layoutY="216.0" prefHeight="212.0" prefWidth="509.0" />
+            <Label fx:id="messageLbl" layoutX="22.0" layoutY="192.0" prefHeight="20.0" prefWidth="182.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="notificationLabel" layoutX="183.0" layoutY="21.0" prefHeight="17.0" prefWidth="231.0" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
